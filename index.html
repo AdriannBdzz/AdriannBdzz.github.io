@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Proyecto Lenguaje de Marcas 1 Evaluacion.">
+    <meta name="keywords" content="Lenguaje de Marcas DiseñoWEB">
+    <meta name="author" content="Adrián Bermúdez Muñoz - 2º DAW">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Proyecto 1 Eval Adrián Bermúdez Muñoz">
+    <meta property="og:description" content="Web que ofrece servicio de Diseño y Gestión WEB.">
+    <meta property="og:image" content="/imagenes/logo.png">
+    <meta property="og:url" content="https://AdriannBdzz.github.io/">
+
+    <meta name="robots" content="noindex" />
+    <meta name="googlebot" content="noindex" />
+    <meta name="googlebot-news" content="noindex" />
+    <meta name="slurp" content="noindex" />
+    <meta name="msnbot" content="noindex" />
+    <title>Proyecto Lenguaje de Marcas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.js"></script>
+    <script src="./js/p5-script.js" defer></script>
+</head>
+<body>
+
+    <dialog id="cookieDialog">
+        <p>Este sitio utiliza cookies para mejorar su experiencia. Al continuar navegando, aceptas el uso de cookies.</p>
+        <button id="acceptCookies">Aceptar</button>
+    </dialog>
+
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="./imagenes/946146-hd_1920_1080_30fps.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <header>
+        <h1>Diseños DAW</h1>
+        <nav>
+            <ul class="main-nav">
+                <li><a href="index.html"><img src="./imagenes/png-transparent-computer-icons-home-black-home-icon-miscellaneous-angle-black-thumbnail-removebg-preview.png" alt="Inicio"> Inicio</a></li>
+                <li><a href="./html/about.html"><img src="./imagenes/pngwing.com-removebg-preview.png" alt="Acerca de"> Acerca de</a></li>
+                <li><a href="./html/services.html"><img src="./imagenes/png-clipart-logo-organization-business-service-trade-business-building-company-removebg-preview.png" alt="Servicios"> Servicios</a></li>
+                <li><a href="./html/contact.html"><img src="./imagenes/Google_Contacts_logo.png" alt="Contacto"> Contacto</a></li>
+                <li><a href="./html/estadisticas.html"><img src="./imagenes/pngtree-statistics-bar-graph-silhouette-icon-transparent-background-png-image_9007534.png" alt="Estadísticas"> Estadísticas</a></li>
+            </ul>
+            <!-- Botones de Iniciar Sesión y Registrarse -->
+            <div class="auth-buttons">
+                <a href="./html/login.html" id="btn-login" class="btn-login">Iniciar Sesión</a>
+                <a href="./html/registro.html" id="btn-register" class="btn-register">Registrarse</a>
+            </div>
+            
+        </nav>
+    </header>
+    <main>
+            <section id="home" class="section">
+                <div class="content-wrapper">
+                    <h2>Bienvenido a Mi Sitio Web</h2>
+                    <p>Este sitio está diseñado para ofrecerte información sobre nuestros servicios, quiénes somos y cómo puedes contactarnos.</p>
+                    <a href="./html/services.html" class="btn">Descubre nuestros servicios</a>
+                </div>
+            </section>
+
+            <section id="p5-section" class="section">
+                
+                <div id="controls" class="controls"></div> <!-- Contenedor para los controles -->
+                <div id="p5-canvas"></div>
+                <h2>Interacción con Partículas</h2>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+    </footer>
+
+    <script>
+    const cookieDialog = document.getElementById('cookieDialog');
+    const acceptCookiesButton = document.getElementById('acceptCookies');
+// Mostrar el aviso de cookies si no se ha aceptado
+if (!localStorage.getItem('cookiesAccepted')) {
+    cookieDialog.showModal();
+}
+
+// Manejar el clic en el botón de aceptar cookies
+acceptCookiesButton.addEventListener('click', () => {
+    localStorage.setItem('cookiesAccepted', 'true');
+    cookieDialog.close();
+});
+
+    </script>
+</body>
+</html>

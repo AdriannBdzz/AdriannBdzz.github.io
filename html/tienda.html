@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards de Producto</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../js/tienda-cookies.js" defer></script>
+</head>
+<body>
+
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="../imagenes/946146-hd_1920_1080_30fps.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <header>
+        <h1>Diseños DAW</h1>
+        <nav>
+            <ul class="main-nav">
+                <li><a href="../index.html"><img src="../imagenes/png-transparent-computer-icons-home-black-home-icon-miscellaneous-angle-black-thumbnail-removebg-preview.png" alt="Inicio"> Inicio</a></li>
+                <li><a href="../html/about.html"><img src="../imagenes/pngwing.com-removebg-preview.png" alt="Acerca de"> Acerca de</a></li>
+                <li><a href="../html/services.html"><img src="../imagenes/png-clipart-logo-organization-business-service-trade-business-building-company-removebg-preview.png" alt="Servicios"> Servicios</a></li>
+                <li><a href="../html/contact.html"><img src="../imagenes/Google_Contacts_logo.png" alt="Contacto"> Contacto</a></li>
+                <li><a href="../html/estadisticas.html"><img src="../imagenes/pngtree-statistics-bar-graph-silhouette-icon-transparent-background-png-image_9007534.png" alt="Estadísticas"> Estadísticas</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="../html/login.html" class="btn-login">Iniciar Sesión</a>
+                <a href="../html/registro.html" class="btn-register">Registrarse</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="overlay">
+            <section id="tienda" class="section">
+                <h2>Nuestra Tienda</h2>
+                <div class="card-container" id="cardContainer">
+                    <template id="productCardTemplate">
+                        <div class="card">
+                            <img src="" alt="Imagen del producto" class="product-image" />
+                            <h2 class="product-title"><slot name="title"></slot></h2>
+                            <p class="product-description"><slot name="description"></slot></p>
+                            <p class="product-price"><slot name="price"></slot></p>
+                            <button class="like-button">❤️ Favorito</button>
+                            <button class="cart-button">🛒 Añadir al carrito</button>
+                        </div>
+                    </template>
+                </div>
+            </section>
+    
+            <div class="action-buttons">
+                <button id="viewCartButton">Ver Carrito</button>
+                <button id="viewFavoritesButton">Ver Favoritos</button>
+                <button id="checkoutButton">Proceder a la Compra</button>
+            </div>
+    
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                    <div id="cartContent" style="display: none;"></div>
+                <div id="favoritesContent" style="display: none;"></div>
+                <div id="checkoutContent" style="display: none;"></div>
+                </div>
+                <button id="closeModal" class="btn-close">Cerrar</button>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
